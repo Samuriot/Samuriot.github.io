@@ -1,6 +1,6 @@
 .nav-bar {
     background: #06142e;
-    width: 70px;
+    width: 85px;
     height: 100%;
     position: absolute;
     top: 0;
@@ -15,7 +15,7 @@
     img {
         display: block;
         margin: 8px auto;
-        width: 24px;
+        width: 40px;
         height: auto;
 
         &.sub-logo {
@@ -34,11 +34,11 @@ nav {
     width: 100%;
 
     a {
-        font-size: 22px;
+        font-size: 30px;
         color: #473e66;
         display: block; 
-        line-height: 51px;
-        height: 51px;
+        line-height: 43px;
+        height: 60px;
         position: relative;
         text-decoration: none;
 
@@ -60,7 +60,7 @@ nav {
             font-size: 9px;
             letter-spacing: 2px;
             position: absolute;
-            bottom: 0;
+            top: 0;
             display: block; 
             width: 100%;
             text-align: center;
@@ -108,7 +108,7 @@ ul {
         a{
             padding: 7px 0;
             display: block;
-            font-size: 15px;
+            font-size: 25px;
             line-height: 16px;
 
             &:hover svg {
