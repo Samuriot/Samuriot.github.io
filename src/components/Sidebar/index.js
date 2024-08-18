@@ -5,6 +5,7 @@ import LogoSubtitle from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faUser, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faFolder } from '@fortawesome/free-solid-svg-icons/faFolder';
 
 const Sidebar = () => (
     <div className='nav-bar'>
@@ -32,6 +33,14 @@ const Sidebar = () => (
                 to="/contact"
             >
                 <FontAwesomeIcon icon={faEnvelope} color="#473e66" />
+            </NavLink>
+            <NavLink 
+                exact="true" 
+                activateclassname="active" 
+                className="project-link" 
+                to="/project"
+            >
+                <FontAwesomeIcon icon={faFolder} color="#473e66" />
             </NavLink>
         </nav>
         <ul>

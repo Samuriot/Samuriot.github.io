@@ -27,18 +27,18 @@ const About = () => {
                         idx={15}
                     />
                 </h1>
-                <p>I am a second-year Computer Science Major with a Data Science Minor at Seattle U!
+                <p>I am a third-year Computer Science Major with a Data Science Minor at Seattle U!
                     I have interests in Backend Development, Game Development and Data Analytics.
-                    Catch me playing VALORANT or coding up a new idea!
+                    Currently, I'm working at Boehringer Ingelheim as an Automation Engineer Intern.
                 </p>
                 <p>
                     I have prior experience in Java, C++, C#, and Python and am extremely willing to 
                     learn more about programming and expand my knowledge.
                 </p>
                 <p>
-                    As far as current projects, I am currently working on learning React through this website,
-                    as well as learning the GODOT game engine to hopefully be able to produce an Indie 2D game with
-                    my team!
+                    As of right now, I am working on a concert safety mobile application known as Hands Up!
+                    This app is dedicated to spreading knowledge on concert safety, tips, as well as reviews of upcoming concerts!
+                    This app utilizes the Flutter framework to allow for portability and cross-platform support.
                 </p>
             </div>
 

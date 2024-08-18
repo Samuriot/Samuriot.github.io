@@ -10,7 +10,7 @@
 }
 
 .tags {
-    color: #f1916d;
+    color: #a239ca;
     opacity: 0.6;
     position: absolute;
     bottom: 0;
@@ -37,27 +37,18 @@
     animation-delay: 1s;
 }
 
-.about-page,
-.contact-page {
-    .text-zone {
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 35%;
-        vertical-align: middle;
-        display: table-cell;
-        max-height: 90%;
-
+.container.about-page,
+.container.contact-page,
+.container.project-page {
         h1 {
             font-size: 60px;
             font-family: 'Coolvetica';
-            color: #f1916d;
+            color: #a239ca;
             font-weight: 400;
             margin-top: 0;
             position: relative;
             margin-bottom: 40px;
-            left: 10px;
+            left: 0px;
 
             &::before {
                 font-family: 'La Belle Aurore';
@@ -83,7 +74,7 @@
 
         p {
             font-size: 19px;
-            color: #fff;
+            color: #e7dfdd;
             font-family: sans-serif;
             font-weight: 300;
             min-width: fit-content;
@@ -101,11 +92,20 @@
                 animation-delay: 1.3s;
             }
         }
+        .text-zone {
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 35%;
+            vertical-align: middle;
+            display: table-cell;
+            max-height: 90%;
     }
 
     .text-animate-hover {
         &:hover {
-            color: #fff;
+            color: #e7dfdd;
         }
     }
 }

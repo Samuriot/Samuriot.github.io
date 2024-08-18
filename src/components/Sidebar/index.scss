@@ -1,5 +1,5 @@
 .nav-bar {
-    background: #06142e;
+    background: #0e0b16;
     width: 85px;
     height: 100%;
     position: absolute;
@@ -47,7 +47,7 @@ nav {
         }
 
         &:hover {
-            color: #f1916d;
+            color: #a239a2;
             svg {
                 opacity: 0;
             }
@@ -57,7 +57,7 @@ nav {
         }
 
         &:after {
-            font-size: 9px;
+            font-size: 10px;
             letter-spacing: 2px;
             position: absolute;
             top: 0;
@@ -87,9 +87,15 @@ nav {
         }
     }
 
+    a.project-link {
+        &:after {
+            content: 'PROJECTS';
+        }
+    }
+
     a.active {
         svg {
-            color: #f1916d
+            color: #a239a2
         }
     }
 }
@@ -112,7 +118,7 @@ ul {
             line-height: 16px;
 
             &:hover svg {
-                color: #f1916d;
+                color: #a239a2;
                 
             }
         }
