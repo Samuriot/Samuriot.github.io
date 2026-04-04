@@ -4,7 +4,6 @@ import AnimatedLetters from '../AnimatedLetters';
 import { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser'
 import cinamoroll from '../../assets/images/cinamoroll.png'
-import { Link } from 'react-router-dom';
 
 const Contact = () => {
 
@@ -75,11 +74,11 @@ const Contact = () => {
                         </form>
                     </div>
                 </div>
-                <Link className='logo' to='https://www.linkedin.com/in/jomikael-ruiz/'>
+                <a className='logo' href='https://www.linkedin.com/in/jomikael-ruiz/' target='_blank' rel='noreferrer'>
                     <div className="Headshot">
                         <img className="profImage" src={cinamoroll} alt="Jomikael Ruiz" />
                     </div>
-            </Link>
+            </a>
             </div>
             <Loader type="pacman" />
         </>

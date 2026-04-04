@@ -1,12 +1,12 @@
 
 import './App.scss';
+import 'loaders.css/loaders.min.css';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Project from './components/Project';
-import Dashboard from './components/Dashboard'
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
         <Route path="about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/project" element={<Project/>} />
-        <Route path = "/dashboard" element = {<Dashboard/>}/>
       </Route>
     </Routes>
     </>

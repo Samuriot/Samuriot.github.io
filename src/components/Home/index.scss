@@ -11,11 +11,11 @@
         color: #a239ca;
         font-size: 60px;
         margin: 0;
-        font-family: 'Coolvetica';
+        font-family: var(--font-heading);
         font-weight: 400;
 
         &::before {
-            font-family: 'La Belle Aurore';
+            font-family: var(--font-accent);
             color: #a239ca;
             font-size: 22px;
             position: absolute;
@@ -25,7 +25,7 @@
         }
 
         &::after {
-            font-family: 'La Belle Aurore';
+            font-family: var(--font-accent);
             color: #a239ca;
             font-size: 22px;
             position: absolute;
@@ -41,7 +41,7 @@
         margin-top: 20px;
         font-weight: 400;
         font-size: 20px;
-        font-family: 'sans-serif';
+        font-family: var(--font-body);
         letter-spacing: 3px;
         animation: fadeIn 1s 1.8s backwards;
     }
@@ -51,7 +51,7 @@
         font-size: 15px;
         font-weight: 400;
         letter-spacing: 4px;
-        font-family: 'sans-serif';
+        font-family: var(--font-body);
         text-decoration: none;
         padding: 10px 18px;
         border: 1px solid #a239ca;

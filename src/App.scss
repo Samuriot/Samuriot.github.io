@@ -1,7 +1,6 @@
 $primary-color: #a239ca;
 
 @import 'animate.css';
-@import '~loaders.css/src/animations/pacman.scss';
 
 @font-face {
   font-family: "Helvetica Neue";
@@ -19,7 +18,7 @@ $primary-color: #a239ca;
 }
 
 input, textarea {
-  font-family: "Hevetica Neue";
+  font-family: var(--font-body);
 }
 
 .loader-active {

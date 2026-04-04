@@ -14,44 +14,39 @@ const Sidebar = () => (
             <img className="sub-logo" src={LogoSubtitle} alt="Jomikael Ruiz" />
         </Link>
         <nav>
-            <NavLink exact="true" 
-            activateclassname="active" 
+            <NavLink
+            end
+            className={({ isActive }) => (isActive ? 'active' : undefined)}
             to="/">
                 <FontAwesomeIcon icon={faHome} color="#473e66" />
             </NavLink>
             <NavLink 
-                exact="true" 
-                activateclassname="active" 
-                className="about-link" 
+                className={({ isActive }) => `about-link${isActive ? ' active' : ''}`}
                 to="/about">
                 <FontAwesomeIcon icon={faUser} color="#473e66" />
             </NavLink>
             <NavLink 
-                exact="true" 
-                activateclassname="active" 
-                className="contact-link" 
+                className={({ isActive }) => `contact-link${isActive ? ' active' : ''}`}
                 to="/contact"
             >
                 <FontAwesomeIcon icon={faEnvelope} color="#473e66" />
             </NavLink>
             <NavLink 
-                exact="true" 
-                activateclassname="active" 
-                className="project-link" 
+                className={({ isActive }) => `project-link${isActive ? ' active' : ''}`}
                 to="/project"
             >
                 <FontAwesomeIcon icon={faFolder} color="#473e66" />
             </NavLink>
         </nav>
-        <ul>
+        <ul className='social-links'>
             <li>
-                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/jomikael-ruiz/">
-                    <FontAwesomeIcon icon={faLinkedinIn} color="#473e66" />
+                <a target="_blank" rel="noreferrer" href="https://github.com/Samuriot" aria-label="GitHub profile" title="GitHub">
+                    <FontAwesomeIcon icon={faGithub} color="#473e66" />
                 </a>
             </li>
             <li>
-                <a target="_blank" rel="noreferrer" href="https://github.com/Samuriot">
-                    <FontAwesomeIcon icon={faGithub} color="#473e66" />
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/jomikael-ruiz/" aria-label="LinkedIn profile" title="LinkedIn">
+                    <FontAwesomeIcon icon={faLinkedinIn} color="#473e66" />
                 </a>
             </li>
         </ul>
