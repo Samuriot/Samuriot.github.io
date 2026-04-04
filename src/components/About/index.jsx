@@ -1,12 +1,23 @@
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState } from 'react'
-import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGitAlt, faJava, faJsSquare, faSteam, faTwitch, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders'
+import experiencesData from '../data/experiences.json'
+
+const experiences = experiencesData.experiences || []
 
 const About = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
+    const [activeExperienceId, setActiveExperienceId] = useState(experiences[0]?.id || null)
+    const activeExperience = experiences.find((experience) => experience.id === activeExperienceId) || null
+
+    const handleExperienceSelect = (id) => {
+        if (id !== activeExperienceId) {
+            setActiveExperienceId(id)
+        }
+    }
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -18,64 +29,89 @@ const About = () => {
 
     return (
         <>
-        <div className='container about-page'>
-            <div className="about-content">
-                <div className="about-text">
-                    <h1 className="about-heading">
-                        <AnimatedLetters
-                            letterClass={letterClass}
-                            strArray={['A', 'b', 'o', 'u', 't', ' ', 'M', 'e']}
-                            idx={15}
-                        />
-                    </h1>
-                    <p className="about-copy">
-                        I am a Computer Science major with a Data Science minor at Seattle University, focused on building practical,
-                        reliable software that solves real problems.
-                    </p>
-                    <p className="about-copy">
-                        My strongest interests are backend development, full-stack product work, and clean engineering workflows.
-                        I currently work as an Automation Engineer Intern at Boehringer Ingelheim.
-                    </p>
-                    <p className="about-copy">
-                        I have hands-on experience with Java, C++, C#, Python, and JavaScript. Right now I am building
-                        Hands Up, a concert safety mobile app using Flutter for cross-platform support.
-                    </p>
-                    <div className="focus-list">
-                        <span>Backend APIs</span>
-                        <span>Automation</span>
-                        <span>Data-Oriented Thinking</span>
-                        <span>Mobile Product Work</span>
-                    </div>
-                </div>
+            <div className='container about-page'>
+                <div className="about-shell">
+                    <div className="about-main">
+                        <section className="about-intro">
+                            <h1 className="about-heading">
+                                <AnimatedLetters
+                                    letterClass={letterClass}
+                                    strArray={['E', 'x', 'p', 'e', 'r', 'i', 'e', 'n', 'c', 'e']}
+                                    idx={15}
+                                />
+                            </h1>
+                        </section>
 
-                <div className="stage-cube-cont">
-                    <div className="cubespinner">
-                        <div className="face1">
-                            <FontAwesomeIcon icon={faJava} color="#DD0031"/>
-                        </div>
-                        <div className="face2">
-                            <FontAwesomeIcon icon={faTwitch} color="#6441A5"/>
-                        </div>
-                        <div className="face3">
-                            <FontAwesomeIcon icon={faSteam} color="#000000"/>
-                        </div>
-                        <div className="face4">
-                            <FontAwesomeIcon icon={faJsSquare} color="#EFD81D"/>
-                        </div>
-                        <div className="face5">
-                            <FontAwesomeIcon icon={faGitAlt} color="#EC4"/>
-                        </div>
-                        <div className="face6">
-                            <FontAwesomeIcon icon={faYoutube} color="#ff0000"/>
-                        </div>
+                        <section className="experience-block">
+                            <span className="experience-kicker">Hover or tap a role</span>
+
+                            <div className="experience-layout">
+                                <div className="experience-list" role="listbox" aria-label="Experience list">
+                                    {experiences.map((experience) => (
+                                        <button
+                                            key={experience.id}
+                                            type="button"
+                                            className={`experience-item${activeExperience?.id === experience.id ? ' is-active' : ''}`}
+                                            onMouseEnter={() => handleExperienceSelect(experience.id)}
+                                            onFocus={() => handleExperienceSelect(experience.id)}
+                                            onClick={() => handleExperienceSelect(experience.id)}
+                                        >
+                                            <span>{experience.company}</span>
+                                            <small>{experience.role}</small>
+                                        </button>
+                                    ))}
+                                </div>
+
+                                <article className="experience-detail" aria-live="polite">
+                                    {activeExperience ? (
+                                        <>
+                                            <h2 className="detail-role">{activeExperience.role}</h2>
+                                            <div className="detail-company">{activeExperience.company}</div>
+                                            <div className="detail-period">{activeExperience.period}</div>
+                                            <ul>
+                                                {activeExperience.details.map((detail) => (
+                                                    <li key={detail}>{detail}</li>
+                                                ))}
+                                            </ul>
+                                        </>
+                                    ) : (
+                                        <div className="detail-company">Add experiences in data to populate this section.</div>
+                                    )}
+                                </article>
+                            </div>
+                        </section>
                     </div>
+
+                    <aside className="cube-column">
+                        <p className="cube-kicker">Tech Snapshot</p>
+                        <div className="stage-cube-cont">
+                            <div className="cubespinner">
+                                <div className="face1">
+                                    <FontAwesomeIcon icon={faJava} color="#DD0031" />
+                                </div>
+                                <div className="face2">
+                                    <FontAwesomeIcon icon={faTwitch} color="#6441A5" />
+                                </div>
+                                <div className="face3">
+                                    <FontAwesomeIcon icon={faSteam} color="#000000" />
+                                </div>
+                                <div className="face4">
+                                    <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+                                </div>
+                                <div className="face5">
+                                    <FontAwesomeIcon icon={faGitAlt} color="#EC4" />
+                                </div>
+                                <div className="face6">
+                                    <FontAwesomeIcon icon={faYoutube} color="#ff0000" />
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
-        </div>
-        <Loader type="pacman" />
+            <Loader type="pacman" />
         </>
     )
-
 }
 
 export default About

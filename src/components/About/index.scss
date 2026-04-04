@@ -1,80 +1,177 @@
 .about-page {
     padding: 32px 36px;
+}
 
-    .about-content {
-        max-width: 1120px;
-        margin: 0 auto;
-        min-height: calc(100vh - 180px);
-        display: grid;
-        grid-template-columns: 1.35fr 1fr;
-        align-items: center;
-        gap: 56px;
+.about-shell {
+    max-width: 1120px;
+    margin: 0 auto;
+    min-height: calc(100vh - 180px);
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-areas:
+        'intro cube'
+        'experience cube';
+    gap: 14px 44px;
+    align-items: start;
+}
+
+.about-intro {
+    grid-area: intro;
+}
+
+.about-main {
+    grid-area: intro / intro / experience / experience;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.experience-block {
+    grid-area: auto;
+    margin-top: 0;
+    padding: 16px;
+    border: 1px solid #574f68;
+    border-radius: 14px;
+    background: rgba(16, 13, 25, 0.55);
+}
+
+.about-kicker,
+.experience-kicker,
+.cube-kicker {
+    margin: 0;
+    font-size: 1.25rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b7afc8;
+    font-family: var(--font-body);
+}
+
+.experience-kicker {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.about-heading {
+    margin: 10px 0 0;
+    font-size: clamp(4.2rem, 6.2vw, 7rem);
+    line-height: 1.04;
+    font-family: var(--font-heading);
+    color: #f2eefc;
+    font-weight: 700;
+}
+
+.experience-layout {
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 0.95fr 1.25fr;
+    gap: 14px;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.experience-item {
+    border: 1px solid #574f68;
+    background: rgba(20, 16, 31, 0.45);
+    border-radius: 10px;
+    color: #d8d1e8;
+    text-align: left;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: border-color 0.2s ease, background 0.2s ease;
+
+    span {
+        display: block;
+        font-size: 1.35rem;
+        font-weight: 600;
     }
 
-    .about-text {
-        max-width: 66ch;
+    small {
+        display: block;
+        margin-top: 4px;
+        font-size: 1.2rem;
+        color: #b8b0ca;
     }
 
-    .kicker {
-        margin: 0 0 14px;
-        font-size: 1.4rem;
-        font-family: var(--font-body);
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: #b7afc8;
+    &:hover,
+    &:focus-visible,
+    &.is-active {
+        border-color: #8f6dc6;
+        background: rgba(43, 31, 67, 0.82);
+        outline: none;
     }
+}
 
-    .about-heading {
+.experience-detail {
+    border: 1px solid #574f68;
+    border-radius: 12px;
+    background: rgba(20, 16, 31, 0.82);
+    padding: 14px;
+
+    .detail-role {
         margin: 0;
-        font-size: clamp(4rem, 6vw, 6.8rem);
-        line-height: 1.03;
-        color: #f2eefc;
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: #f0eaff;
         font-family: var(--font-heading);
-        font-weight: 700;
     }
 
-    .about-copy {
-        margin: 16px 0 0;
-        color: #d2ccdf;
-        font-size: 1.85rem;
-        line-height: 1.62;
+    .detail-company,
+    .detail-period {
+        margin: 4px 0 0;
+        font-size: 1.25rem;
+        color: #bbb1d1;
         font-family: var(--font-body);
     }
 
-    .focus-list {
-        margin-top: 24px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-
-        span {
-            border: 1px solid #6f6385;
-            color: #d8d1e8;
-            border-radius: 999px;
-            padding: 8px 12px;
-            font-size: 1.3rem;
-            font-family: var(--font-body);
-        }
+    ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
     }
+
+    li {
+        color: #d2ccdf;
+        font-size: 1.4rem;
+        line-height: 1.5;
+        margin-bottom: 8px;
+        font-family: var(--font-body);
+    }
+}
+
+.cube-column {
+    grid-area: cube;
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #574f68;
+    border-radius: 14px;
+    background: rgba(16, 13, 25, 0.45);
 }
 
 .stage-cube-cont {
     width: 100%;
-    min-height: 420px;
+    min-height: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1200px;
-    position: relative;
 }
 
 .cubespinner {
     animation: spincube 12s ease-in-out infinite;
     transform-style: preserve-3d;
     transform-origin: 100px 100px 0;
-    position: relative;
     width: 220px;
     height: 220px;
+    position: relative;
 
     div {
         position: absolute;
@@ -86,75 +183,60 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
     }
 
-    .face1 {
-        transform: translateZ(110px);
-    }
-    .face2 {
-        transform: rotateY(90deg) translateZ(110px);
-    }
-    .face3 {
-        transform: rotateY(90deg) rotateX(90deg) translateZ(110px);
-    }
-    .face4 {
-        transform: rotateY(180deg) rotateZ(90deg) translateZ(110px);
-    }
-    .face5 {
-        transform: rotateY(-90deg) rotateZ(90deg) translateZ(110px);
-    }
-    .face6 {
-        transform: rotateX(-90deg) translateZ(110px);
-    }
+    .face1 { transform: translateZ(110px); }
+    .face2 { transform: rotateY(90deg) translateZ(110px); }
+    .face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(110px); }
+    .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(110px); }
+    .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(110px); }
+    .face6 { transform: rotateX(-90deg) translateZ(110px); }
 }
 
 @keyframes spincube {
     from,
-    to {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    }
-    16% {
-        transform: rotateY(-90deg);
-    }
-    33% {
-        transform: rotateY(-90deg) rotateZ(90deg);
-    }
-    50% {
-        transform: rotateY(-180deg) rotateZ(90deg);
-    }
-    66% {
-        transform: rotateY(-270deg) rotateZ(90deg);
-    }
-    83% {
-        transform: rotateY(90deg);
-    }
+    to { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16% { transform: rotateY(-90deg); }
+    33% { transform: rotateY(-90deg) rotateZ(90deg); }
+    50% { transform: rotateY(-180deg) rotateZ(90deg); }
+    66% { transform: rotateY(-270deg) rotateZ(90deg); }
+    83% { transform: rotateY(90deg); }
 }
 
 @media (max-width: 1024px) {
     .about-page {
         padding: 24px 20px;
+    }
 
-        .about-content {
-            grid-template-columns: 1fr;
-            gap: 36px;
-            min-height: auto;
-        }
+    .about-shell {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'intro'
+            'experience'
+            'cube';
+        gap: 28px;
+        min-height: auto;
+    }
+
+    .about-main {
+        grid-area: auto;
+    }
+
+    .experience-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cube-column {
+        position: static;
+        align-items: flex-start;
     }
 
     .stage-cube-cont {
         min-height: 300px;
-        margin-top: 8px;
     }
 }
 
 @media (max-width: 640px) {
-    .about-page {
-        .about-copy {
-            font-size: 1.65rem;
-        }
-    }
-
     .cubespinner {
         width: 180px;
         height: 180px;
@@ -165,23 +247,11 @@
             font-size: 90px;
         }
 
-        .face1 {
-            transform: translateZ(90px);
-        }
-        .face2 {
-            transform: rotateY(90deg) translateZ(90px);
-        }
-        .face3 {
-            transform: rotateY(90deg) rotateX(90deg) translateZ(90px);
-        }
-        .face4 {
-            transform: rotateY(180deg) rotateZ(90deg) translateZ(90px);
-        }
-        .face5 {
-            transform: rotateY(-90deg) rotateZ(90deg) translateZ(90px);
-        }
-        .face6 {
-            transform: rotateX(-90deg) translateZ(90px);
-        }
+        .face1 { transform: translateZ(90px); }
+        .face2 { transform: rotateY(90deg) translateZ(90px); }
+        .face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(90px); }
+        .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(90px); }
+        .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(90px); }
+        .face6 { transform: rotateX(-90deg) translateZ(90px); }
     }
 }
