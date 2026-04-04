@@ -1,0 +1,5 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="C++ logo">
+  <rect width="256" height="256" rx="28" fill="#00599C"/>
+  <path d="M68 128c0-27 22-49 49-49 12 0 23 4 31 11l-13 16a28 28 0 0 0-18-7c-16 0-29 13-29 29s13 29 29 29c7 0 14-3 19-8l12 16c-9 8-20 12-32 12-27 0-48-22-48-49z" fill="#fff"/>
+  <path d="M168 109h12v12h12v-12h12v-12h-12V85h-12v12h-12v12zm0 44h12v12h12v-12h12v-12h-12v-12h-12v12h-12v12z" fill="#fff"/>
+</svg>
