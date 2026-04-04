@@ -2,9 +2,11 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGitAlt, faJava, faJsSquare, faSteam, faTwitch, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faAws, faGolang, faLinux, faPython } from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders'
 import experiencesData from '../data/experiences.json'
+import cplusplusLogo from '../../assets/images/cplusplus.svg'
+import typescriptLogo from '../../assets/images/typescript.svg'
 
 const experiences = experiencesData.experiences || []
 
@@ -77,22 +79,22 @@ const About = () => {
                         <div className="stage-cube-cont">
                             <div className="cubespinner">
                                 <div className="face1">
-                                    <FontAwesomeIcon icon={faJava} color="#DD0031" />
+                                    <img className="tech-logo" src={cplusplusLogo} alt="C++" />
                                 </div>
                                 <div className="face2">
-                                    <FontAwesomeIcon icon={faTwitch} color="#6441A5" />
+                                    <FontAwesomeIcon icon={faPython} color="#3776ab" />
                                 </div>
                                 <div className="face3">
-                                    <FontAwesomeIcon icon={faSteam} color="#000000" />
+                                    <FontAwesomeIcon icon={faGolang} color="#00add8" />
                                 </div>
                                 <div className="face4">
-                                    <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+                                    <FontAwesomeIcon icon={faAws} color="#ff9900" />
                                 </div>
                                 <div className="face5">
-                                    <FontAwesomeIcon icon={faGitAlt} color="#EC4" />
+                                    <img className="tech-logo" src={typescriptLogo} alt="TypeScript" />
                                 </div>
                                 <div className="face6">
-                                    <FontAwesomeIcon icon={faYoutube} color="#ff0000" />
+                                    <FontAwesomeIcon icon={faLinux} className="linux-icon" color="#fbc02d" />
                                 </div>
                             </div>
                         </div>

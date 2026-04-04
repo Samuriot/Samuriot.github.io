@@ -209,6 +209,28 @@
         align-items: center;
     }
 
+    .tech-text {
+        font-family: var(--font-heading);
+        font-size: 5rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #f0eaff;
+    }
+
+    .tech-logo {
+        width: 112px;
+        height: 112px;
+        object-fit: contain;
+    }
+
+    .face5 .tech-logo {
+        transform: rotate(-90deg);
+    }
+
+    .face6 .linux-icon {
+        transform: rotate(-90deg);
+    }
+
     .face1 { transform: translateZ(110px); }
     .face2 { transform: rotateY(90deg) translateZ(110px); }
     .face3 { transform: rotateY(90deg) rotateX(90deg) translateZ(110px); }
@@ -286,5 +308,22 @@
         .face4 { transform: rotateY(180deg) rotateZ(90deg) translateZ(90px); }
         .face5 { transform: rotateY(-90deg) rotateZ(90deg) translateZ(90px); }
         .face6 { transform: rotateX(-90deg) translateZ(90px); }
+
+        .tech-text {
+            font-size: 3.8rem;
+        }
+
+        .tech-logo {
+            width: 92px;
+            height: 92px;
+        }
+
+        .face5 .tech-logo {
+            transform: rotate(-90deg);
+        }
+
+        .face6 .linux-icon {
+            transform: rotate(-90deg);
+        }
     }
 }
