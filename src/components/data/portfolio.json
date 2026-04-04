@@ -2,33 +2,33 @@
     "portfolio": [
         {
             "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "title": "swg: C++ Shell & Terminal Emulator",
+            "description": "C++, SDL2, Makefile",
+            "url": "https://github.com/Samuriot/swg"
         },
         {
             "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "title": "Grocery Store Cloud Microservices",
+            "description": "Golang, React, Python, DynamoDB, Terraform, AWS",
+            "url":"https://github.com/Samuriot/cloud-grocery-system"
         },
         {
             "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "title": "SyncEQ: Musician Networking Platform",
+            "description": "Angular, Express, Socket.IO, MongoDB, Azure, Auth0, Jest",
+            "url": "https://github.com/Samuriot/Sync.EQ-Prototype"
         },
         {
             "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "title": "Gemini-Powered AI Resume Review Assistant",
+            "description": "Python, Supabase, Docker, GeminiAPI",
+            "url": "https://github.com/Samuriot/acm-discord-bot"
         },
         {
             "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "title": "Client-Server Calculator over TCP",
+            "description": "C++. Socket Programming, TCP, UDP",
+            "url": "https://github.com/Samuriot/3500-Legacy/tree/main/p3"
         }
     ]
 }

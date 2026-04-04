@@ -27,15 +27,24 @@ const Project = () => {
             <div className="images-container">
                 {
                     portfolio.map((port, idx) => {
+                        const techPreview = (port.description || '')
+                            .split(',')
+                            .slice(0, 3)
+                            .map((item) => item.trim())
+                            .filter(Boolean)
+
                         return (
                             <div className="image-box" key={idx}>
-                                <img 
-                                src={port.image}
-                                className="portfolio-image"
-                                alt="portfolio" />
+                                <div className={`placeholder-art theme-${(idx % 5) + 1}`}>
+                                    <span className="project-label">Project</span>
+                                    <h3>{port.title}</h3>
+                                    <div className="tech-preview">
+                                        {techPreview.map((tech) => (
+                                            <span key={`${port.title}-${tech}`}>{tech}</span>
+                                        ))}
+                                    </div>
+                                </div>
                                 <div className="content">
-                                    <p className="title">{port.name}</p>
-                                    <h4 className="description">{port.description}</h4>
                                     <button
                                         className="btn"
                                         onClick={() => window.open(port.url)}
@@ -56,7 +65,7 @@ const Project = () => {
                 <h1 className="page-title">
                     <AnimatedLetters
                         letterClass={letterClass}
-                        strArray={"My Work".split("")}
+                        strArray={"My Technical Portfolio".split("")}
                         idx={15}
                     />
                 </h1>
