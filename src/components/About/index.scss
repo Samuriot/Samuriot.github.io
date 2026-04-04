@@ -1,53 +1,111 @@
+.about-page {
+    padding: 32px 36px;
+
+    .about-content {
+        max-width: 1120px;
+        margin: 0 auto;
+        min-height: calc(100vh - 180px);
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        align-items: center;
+        gap: 56px;
+    }
+
+    .about-text {
+        max-width: 66ch;
+    }
+
+    .kicker {
+        margin: 0 0 14px;
+        font-size: 1.4rem;
+        font-family: var(--font-body);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #b7afc8;
+    }
+
+    .about-heading {
+        margin: 0;
+        font-size: clamp(4rem, 6vw, 6.8rem);
+        line-height: 1.03;
+        color: #f2eefc;
+        font-family: var(--font-heading);
+        font-weight: 700;
+    }
+
+    .about-copy {
+        margin: 16px 0 0;
+        color: #d2ccdf;
+        font-size: 1.85rem;
+        line-height: 1.62;
+        font-family: var(--font-body);
+    }
+
+    .focus-list {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        span {
+            border: 1px solid #6f6385;
+            color: #d8d1e8;
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 1.3rem;
+            font-family: var(--font-body);
+        }
+    }
+}
+
 .stage-cube-cont {
-    width: 50%;
-    height: 100%;
-    top: 0;
-    padding-top: 18%;
-    margin-left: 0;
-    position:absolute;
-    right: 0;
-    overflow: hidden;
+    width: 100%;
+    min-height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+    position: relative;
 }
 
 .cubespinner {
-    animation-name: spincube;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 12s;
+    animation: spincube 12s ease-in-out infinite;
     transform-style: preserve-3d;
     transform-origin: 100px 100px 0;
-    margin-left: calc(50% - 100px);
+    position: relative;
+    width: 220px;
+    height: 220px;
 
     div {
         position: absolute;
-        width: 300px;
-        height: 300px;
-        border: 5px solid #ccc;
-        background: rgba(245,215,219, 0.8);
-        font-size: 150px;
+        width: 220px;
+        height: 220px;
+        border: 2px solid rgba(197, 184, 220, 0.45);
+        background: rgba(41, 33, 57, 0.85);
+        font-size: 110px;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 15px 0px lightyellow;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
     }
 
     .face1 {
-        transform: translateZ(150px);
+        transform: translateZ(110px);
     }
     .face2 {
-        transform: rotateY(90deg) translateZ(150px);
+        transform: rotateY(90deg) translateZ(110px);
     }
     .face3 {
-        transform: rotateY(90deg) rotateX(90deg) translateZ(150px);
+        transform: rotateY(90deg) rotateX(90deg) translateZ(110px);
     }
     .face4 {
-        transform: rotateY(180deg) rotateZ(90deg) translateZ(150px);
+        transform: rotateY(180deg) rotateZ(90deg) translateZ(110px);
     }
     .face5 {
-        transform: rotateY(-90deg) rotateZ(90deg) translateZ(150px);
+        transform: rotateY(-90deg) rotateZ(90deg) translateZ(110px);
     }
     .face6 {
-        transform: rotateX(-90deg) translateZ(150px);
+        transform: rotateX(-90deg) translateZ(110px);
     }
 }
 
@@ -70,5 +128,60 @@
     }
     83% {
         transform: rotateY(90deg);
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-page {
+        padding: 24px 20px;
+
+        .about-content {
+            grid-template-columns: 1fr;
+            gap: 36px;
+            min-height: auto;
+        }
+    }
+
+    .stage-cube-cont {
+        min-height: 300px;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-page {
+        .about-copy {
+            font-size: 1.65rem;
+        }
+    }
+
+    .cubespinner {
+        width: 180px;
+        height: 180px;
+
+        div {
+            width: 180px;
+            height: 180px;
+            font-size: 90px;
+        }
+
+        .face1 {
+            transform: translateZ(90px);
+        }
+        .face2 {
+            transform: rotateY(90deg) translateZ(90px);
+        }
+        .face3 {
+            transform: rotateY(90deg) rotateX(90deg) translateZ(90px);
+        }
+        .face4 {
+            transform: rotateY(180deg) rotateZ(90deg) translateZ(90px);
+        }
+        .face5 {
+            transform: rotateY(-90deg) rotateZ(90deg) translateZ(90px);
+        }
+        .face6 {
+            transform: rotateX(-90deg) translateZ(90px);
+        }
     }
 }
