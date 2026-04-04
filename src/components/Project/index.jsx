@@ -62,13 +62,6 @@ const Project = () => {
     return (
         <>
             <div className="container project-page">
-                <h1 className="page-title">
-                    <AnimatedLetters
-                        letterClass={letterClass}
-                        strArray={"My Technical Portfolio".split("")}
-                        idx={15}
-                    />
-                </h1>
                 <div>{renderPortfolio(portfolio)}</div>
             </div>
             <Loader type="pacman" />
