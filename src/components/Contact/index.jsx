@@ -1,91 +1,52 @@
-import Loader from 'react-loaders';
-import './index.scss';
-import AnimatedLetters from '../AnimatedLetters';
-import { useEffect, useRef, useState } from 'react';
-import emailjs from '@emailjs/browser'
-import cinamoroll from '../../assets/images/cinamoroll.png'
+import Loader from 'react-loaders'
+import './index.scss'
+import AnimatedLetters from '../AnimatedLetters'
+import { useEffect, useState } from 'react'
 
 const Contact = () => {
-
     const [letterClass, setLetterClass] = useState('text-animate')
-    const refForm = useRef()
+    const emailAddress = 'jomi.g.ruiz@gmail.com'
 
     useEffect(() => {
-        return () => setTimeout(() => {
+        const timer = setTimeout(() => {
             setLetterClass('text-animate-hover')
-        }, 4000)  
+        }, 2500)
+
+        return () => clearTimeout(timer)
     }, [])
-
-    const sendEmail = (e) => {
-        e.preventDefault()
-
-        emailjs
-            .sendForm(
-                'service_q2dcubn',
-                'template_zoh4inm',
-                refForm.current,
-                '0Pc8fLfotuCmRN2sN'
-            )
-            .then(
-                () => {
-                    alert('Message successfully sent!')
-                    window.location.reload(false)
-                },
-                () => {
-                    alert('Failed to send the message, please try again!')
-                }
-            )
-    }
 
     return (
         <>
             <div className="container contact-page">
-                <div className="text-zone">
+                <div className="contact-content">
                     <h1>
-                        <AnimatedLetters 
+                        <AnimatedLetters
                             letterClass={letterClass}
-                            strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'M', 'e', '!']}
+                            strArray={['C', 'o', 'n', 'n', 'e', 'c', 't']}
                             idx={16}
                         />
                     </h1>
                     <p>
-                        I am interested in learning more about programming and expanding my skills and knowledge to different projects!
-                        If you would like to collaborate on a project or idea, please reach out!
+                        Reach out directly through email or connect with me on GitHub and LinkedIn.
+                        For a copy of my resume, please reach out to me directly.
                     </p>
-                    <div className="contact-form">
-                        <form ref ={refForm} onSubmit={sendEmail}>
-                            <ul>
-                                <li className='half'>
-                                    <input type="text" name="name" placeholder="Name" required/>
-                                </li>
-                                <li className='half'>
-                                    <input type="email" name="email" placeholder="Email" required/>
-                                </li>
-                                <li>
-                                    <input placeholder="Subject" type="text"  name="Subject" required/>
-                                </li>
-                                <li>
-                                    <textarea placeholdler="Message" name="message" required></textarea>
-                                </li>
-                                <li>
-                                    <input type="submit" className='flat-button' value="SEND" />
-                                </li>
-                            </ul>
-                        </form>
+
+                    <div className="contact-links">
+                        <a className="contact-button" href={`mailto:${emailAddress}`}>
+                            Email
+                        </a>
+                        <a className="contact-button" href="https://github.com/Samuriot" target="_blank" rel="noreferrer">
+                            GitHub
+                        </a>
+                        <a className="contact-button" href="https://www.linkedin.com/in/jomikael-ruiz/" target="_blank" rel="noreferrer">
+                            LinkedIn
+                        </a>
                     </div>
                 </div>
-                <a className='logo' href='https://www.linkedin.com/in/jomikael-ruiz/' target='_blank' rel='noreferrer'>
-                    <div className="Headshot">
-                        <img className="profImage" src={cinamoroll} alt="Jomikael Ruiz" />
-                    </div>
-            </a>
             </div>
             <Loader type="pacman" />
         </>
-
-
     )
-
 }
 
 export default Contact
