@@ -12,7 +12,8 @@
         'intro cube'
         'experience cube';
     gap: 14px 44px;
-    align-items: start;
+    align-content: center;
+    align-items: stretch;
 }
 
 .about-intro {
@@ -23,16 +24,28 @@
     grid-area: intro / intro / experience / experience;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+    align-items: stretch;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .experience-block {
     grid-area: auto;
     margin-top: 0;
+    transform: none;
+    width: 100%;
+    max-width: 860px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding: 16px;
     border: 1px solid #574f68;
     border-radius: 14px;
     background: rgba(16, 13, 25, 0.55);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .about-kicker,
@@ -48,11 +61,12 @@
 
 .experience-kicker {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
+    text-align: left;
 }
 
 .about-heading {
-    margin: 10px 0 0;
+    margin: 0;
     font-size: clamp(4.2rem, 6.2vw, 7rem);
     line-height: 1.04;
     font-family: var(--font-heading);
@@ -65,12 +79,17 @@
     display: grid;
     grid-template-columns: 0.95fr 1.25fr;
     gap: 14px;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    align-items: start;
 }
 
 .experience-list {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    justify-content: flex-start;
 }
 
 .experience-item {
@@ -111,6 +130,8 @@
     border-radius: 12px;
     background: rgba(20, 16, 31, 0.82);
     padding: 14px;
+    height: auto;
+    overflow: visible;
 
     .detail-role {
         margin: 0;
@@ -144,8 +165,8 @@
 
 .cube-column {
     grid-area: cube;
-    position: sticky;
-    top: 120px;
+    position: relative;
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,11 +175,14 @@
     border: 1px solid #574f68;
     border-radius: 14px;
     background: rgba(16, 13, 25, 0.45);
+    height: auto;
+    box-sizing: border-box;
 }
 
 .stage-cube-cont {
     width: 100%;
-    min-height: 380px;
+    flex: 1;
+    min-height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -220,15 +244,24 @@
 
     .about-main {
         grid-area: auto;
+        gap: 12px;
+    }
+
+    .experience-block {
+        transform: none;
+        height: auto;
     }
 
     .experience-layout {
         grid-template-columns: 1fr;
+        height: auto;
     }
 
     .cube-column {
         position: static;
+        align-self: auto;
         align-items: flex-start;
+        height: auto;
     }
 
     .stage-cube-cont {

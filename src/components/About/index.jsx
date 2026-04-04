@@ -32,18 +32,8 @@ const About = () => {
             <div className='container about-page'>
                 <div className="about-shell">
                     <div className="about-main">
-                        <section className="about-intro">
-                            <h1 className="about-heading">
-                                <AnimatedLetters
-                                    letterClass={letterClass}
-                                    strArray={['E', 'x', 'p', 'e', 'r', 'i', 'e', 'n', 'c', 'e']}
-                                    idx={15}
-                                />
-                            </h1>
-                        </section>
-
                         <section className="experience-block">
-                            <span className="experience-kicker">Hover or tap a role</span>
+                            <span className="experience-kicker">Hover to learn more!</span>
 
                             <div className="experience-layout">
                                 <div className="experience-list" role="listbox" aria-label="Experience list">
