@@ -1,0 +1,58 @@
+{
+  "experiences": [
+    {
+      "id": "oracle-new-grad",
+      "company": "Oracle",
+      "role": "Software Engineer I",
+      "period": "Incoming Summer 2026",
+      "details": [
+        "Returning to the Customer Engineering Division supporting the Session Border Controller (SBC) & Cloud Native SBC."
+      ]
+    },
+    {
+      "id": "amazon",
+      "company": "Amazon",
+      "role": "Software Development Engineer",
+      "period": "Sept. 2025 - June 2026",
+      "details": [
+        "Implemented Agentic AI workflows using the StandsSDK framework to streamline On-Call Engineer resolution time by 30%.",
+        "Orchestrated multi-agent deployments to ensure accurate and precise text & code generation for issue resolution.",
+        "Resolved several deployment blockers, especially pertaining to Infrastructure Provisioning & Docker Image building"
+      ]
+    },
+    {
+      "id": "oracle-intern",
+      "company": "Oracle",
+      "role": "Software Engineer Intern",
+      "period": "Summer 2025",
+      "details": [
+        "Worked on the Customer Engineering Division supporting the Enterprise Session Border Controller (SBC) & Cloud Native SBC.",
+        "Implemented a CI/CD pipeline using Jenkins to support microservice build platform.",
+        "Simulated a K8s deployment, including Canary Deployment configuration, using ArgoCD.",
+        "Orchestrated an OpenStack local cloud deployment on Bare Metal Linux Servers to support engineer VM provisioning."
+      ]
+    },
+    {
+      "id": "bi",
+      "company": "Boehringer Ingelheim",
+      "role": "Automation Engineer Intern",
+      "period": "Summer 2024",
+      "details": [
+        "Worked with DeltaV DCS to engineer control-flow state diagrams for Drug Manufacturing.",
+        "Intern Project consisted of developing a verbose system to track 300+ engineering drawings.",
+        "Submitted all code and logic in accordance to ISA-88 Batch Control Standards."
+      ]
+    },
+    {
+      "id": "Bilimetrix",
+      "company": "Bilimetrix USA",
+      "role": "Student Software Developer",
+      "period": "Summer 2023",
+      "details": [
+        "Worked on researcher dashboards using the ASP.NET framework in C#.",
+        "Resolved a key elevated authenitcation vulnerability within Researcher login page.",
+        "Presented key findings, sprint updates, and project progress to key stakeholders and researchers."
+      ]
+    }
+  ]
+}
