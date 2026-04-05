@@ -10,6 +10,17 @@
       ]
     },
     {
+      "id": "cs-ta",
+      "company": "Seattle University Department of Computer Science",
+      "role": "Teaching Assistant",
+      "period": "Sept. 2025 - June 2026",
+      "details": [
+        "Supported Security in Computer (CPSC 4710) & Design & Analysis of Algorithms (CPSC 4100)",
+        "Held weekly office hours to assist students with course concepts & assignment help",
+        "Developed clear rubrics for students to understand the criteria of success per assignment"
+      ]
+    },
+    {
       "id": "amazon",
       "company": "Amazon",
       "role": "Software Development Engineer",
@@ -46,7 +57,7 @@
     {
       "id": "Bilimetrix",
       "company": "Bilimetrix USA",
-      "role": "Student Software Developer",
+      "role": "Software Developer Intern",
       "period": "Summer 2023",
       "details": [
         "Worked on researcher dashboards using the ASP.NET framework in C#.",
