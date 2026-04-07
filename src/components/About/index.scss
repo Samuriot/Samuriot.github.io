@@ -5,7 +5,7 @@
 .about-shell {
     max-width: 1120px;
     margin: 0 auto;
-    min-height: calc(100vh - 180px);
+    min-height: calc(100dvh - 180px);
     display: grid;
     grid-template-columns: 1.3fr 0.7fr;
     grid-template-areas:
@@ -292,6 +292,34 @@
 }
 
 @media (max-width: 640px) {
+    .about-page {
+        padding: 18px 14px 28px;
+    }
+
+    .experience-block {
+        padding: 12px;
+    }
+
+    .experience-item {
+        padding: 10px;
+
+        span {
+            font-size: 1.25rem;
+        }
+    }
+
+    .experience-detail {
+        padding: 12px;
+
+        li {
+            font-size: 1.3rem;
+        }
+    }
+
+    .cube-column {
+        padding: 10px;
+    }
+
     .cubespinner {
         width: 180px;
         height: 180px;

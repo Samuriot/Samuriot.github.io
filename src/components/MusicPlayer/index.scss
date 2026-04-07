@@ -99,3 +99,19 @@
     }
   }
 }
+
+@media (max-width: 640px) {
+  .music-player {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 0.8rem;
+    width: calc(100% - 1.6rem);
+    max-width: 360px;
+    justify-content: space-between;
+
+    &__volume {
+      display: none;
+    }
+  }
+}

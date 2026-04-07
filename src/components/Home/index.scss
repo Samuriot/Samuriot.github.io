@@ -4,11 +4,17 @@
     .home-content {
         max-width: 1120px;
         margin: 0 auto;
-        min-height: calc(100vh - 180px);
+        width: 100%;
+        min-height: calc(100dvh - 180px);
         display: grid;
         grid-template-columns: 1.4fr 0.9fr;
         align-items: center;
         gap: 56px;
+    }
+
+    .intro-block {
+        min-width: 0;
+        box-sizing: border-box;
     }
 
     .kicker {
@@ -74,6 +80,7 @@
         border: 1px solid rgba(126, 105, 164, 0.42);
         border-radius: 14px;
         padding: 20px;
+        box-sizing: border-box;
     }
 
     .headshot {
@@ -119,16 +126,38 @@
             grid-template-columns: 1fr;
             gap: 28px;
             min-height: auto;
+            justify-items: center;
+        }
+
+        .intro-block,
+        .profile-panel {
+            width: min(100%, 420px);
         }
 
         .profile-panel {
             max-width: 420px;
+            margin: 0 auto;
         }
     }
 }
 
 @media (max-width: 640px) {
     .home-page {
+        padding: 8px 14px 28px;
+
+        .home-content {
+            gap: 20px;
+        }
+
+        .intro-block,
+        .profile-panel {
+            width: min(100%, 360px);
+        }
+
+        h1 {
+            font-size: clamp(3.4rem, 12vw, 4.6rem);
+        }
+
         .actions {
             flex-direction: column;
         }
@@ -140,6 +169,14 @@
 
         .summary {
             font-size: 1.65rem;
+        }
+
+        .profile-panel {
+            padding: 14px;
+        }
+
+        .role {
+            font-size: 1.4rem;
         }
     }
 }

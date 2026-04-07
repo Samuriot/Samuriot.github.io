@@ -7,6 +7,12 @@
   --font-accent: 'Marck Script', cursive;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -16,10 +22,16 @@ body {
   font: 300 11px/1.4 var(--font-body);
   color: #444;
   background: #0e0b16;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 code {
