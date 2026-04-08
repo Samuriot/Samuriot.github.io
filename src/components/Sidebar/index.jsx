@@ -12,6 +12,12 @@ const Sidebar = () => (
             <img src={LogoS} alt="logo" />
         </Link>
         <nav>
+            <NavLink 
+                className={({ isActive }) => `project-link${isActive ? ' active' : ''}`}
+                to="/setup"
+            >
+                <FontAwesomeIcon icon={faComputer} color="#473e66" />
+            </NavLink>
             <NavLink
             end
             className={({ isActive }) => (isActive ? 'active' : undefined)}
